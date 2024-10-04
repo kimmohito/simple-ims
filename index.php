@@ -183,6 +183,52 @@ if(isset($_GET['modal'])){
 }
 
 
+if(isset($_GET['table'])){
+    $table = $_GET['table'];
+}else{
+    $table = 'inventories';
+}
+
+
+$query = "SHOW COLUMNS FROM ".$table;
+$result = mysqli_query($connect, $query);
+
+$query2 = "SELECT * FROM ".$table;
+$result2 = mysqli_query($connect, $query2);
+
+$query3 = "SHOW TABLES";
+$result3 = mysqli_query($connect, $query3);
+
+
+if(mysqli_num_rows($result) > 0){
+
+    echo 'Tables : ';
+    while($row3=mysqli_fetch_assoc($result3)){
+        echo '<a href="?table='.$row3['Tables_in_simple-ims'].'">'.$row3['Tables_in_simple-ims'].'</a>,  ';
+    }
+
+    echo '<table border="1">'; 
+
+        echo '<tr>';
+            $columns = [];
+            while($row=mysqli_fetch_assoc($result)){
+                echo '<th>'.$row['Field'].'</th>';
+                $columns[] = $row['Field'];
+            }
+        echo '</tr>';
+
+        while($row2=mysqli_fetch_assoc($result2)){
+            echo '<tr>';
+                foreach($columns as $column){
+                    echo '<td>'.$row2[$column].'</td>';
+                }
+            echo '</tr>';
+        }
+
+    echo '</table>';
+
+}
+
 
 
 
