@@ -14,6 +14,6 @@
 
 - [Tailwind](https://tailwindcss.com/docs/installation/play-cdn)
 
-- [Tabler Iconas](https://tabler.io/icons)
+- [Tabler Icons](https://tabler.io/icons)
 
-- [Tabler Iconas](https://fontawesome.com/download)
+- [Fontawesome](https://fontawesome.com/download)
