@@ -6,6 +6,11 @@ if(isset($_POST['create'])){
 
     $name = $_POST['name'];
 
+    if(preg_match('[_]', $name)){
+        header('location: ../notes.php?error=4');
+        exit();
+    }
+
     $query = "INSERT INTO notes (name) VALUES ('$name')";
 
     $result = mysqli_query($connect, $query);

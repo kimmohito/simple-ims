@@ -3,7 +3,7 @@
 $color = 'black';
 $message = '';
 
-if(isset($_GET['success']) || isset($_GET['error'])){
+if(isset($_GET['success'])){
 
     $color = 'green';
 
@@ -17,6 +17,23 @@ if(isset($_GET['success']) || isset($_GET['error'])){
 
     elseif($_GET['success']==3){
         $message = 'Successfully updated one item from database.';
+    }
+
+    
+    elseif($_GET['success']==4){
+        $message = 'Successfully registered. You can login now.';
+    }
+
+    elseif($_GET['success']==5){
+        $message = 'Successfully login!';
+    }
+
+    elseif($_GET['success']==6){
+        $message = 'Successfully Logout!';
+    }
+
+    elseif($_GET['success']==7){
+        $message = 'Successfully Update your profile!';
     }
 
 }
@@ -38,7 +55,32 @@ if(isset($_GET['error'])){
         $message = 'Failed to update one item from database.';
     }
 
+    elseif($_GET['error']==4){
+        $message = 'You cant use underscore inside notes.';
+    }
 
+    
+    elseif($_GET['error']==5){
+        $message = 'Password does not match.';
+    }
+
+    elseif($_GET['error']==6){
+        $message = 'Email has been taken.';
+    }
+
+    
+    elseif($_GET['error']==7){
+        $message = 'Email does not exist! Please register.';
+    }
+
+    elseif($_GET['error']==8){
+        $message = 'Credentials does not match! Please try again.';
+    }
+
+    
+    elseif($_GET['error']==9){
+        $message = 'Failed to upload your profile';
+    }
 }
 
 

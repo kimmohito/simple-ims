@@ -15,6 +15,8 @@ if(isset($_POST['create'])){
     $price = $_POST['price'];
 
 
+    $var = $_POST['price'];
+
     echo $_POST['name'];
 
     /*
@@ -35,10 +37,10 @@ if(isset($_POST['create'])){
     $result = mysqli_query($connect, $query);
 
     if($result){
-        header('location: ../index.php?success=1');
+        header('location: ../inventories.php?success=1');
         exit();
     }else{
-        header('location: ../index.php?error=1');
+        header('location: ../inventories.php?error=1');
         exit();
     }
 
@@ -55,10 +57,10 @@ if(isset($_POST['delete'])){
     $result = mysqli_query($connect, $query);
 
     if($result){
-        header('location: ../index.php?success=2');
+        header('location: ../inventories.php?success=2');
         exit();
     }else{
-        header('location: ../index.php?error=2');
+        header('location: ../inventories.php?error=2');
         exit();
     }
 
@@ -76,10 +78,10 @@ if(isset($_POST['save'])){
     $result = mysqli_query($connect, $query);
 
     if($result){
-        header('location: ../index.php?success=3');
+        header('location: ../inventories.php?success=3');
         exit();
     }else{
-        header('location: ../index.php?error=3');
+        header('location: ../inventories.php?error=3');
         exit();
     }
 
@@ -88,4 +90,4 @@ if(isset($_POST['save'])){
 
 
 
-header('location: ../index.php');
+header('location: ../inventories.php');
